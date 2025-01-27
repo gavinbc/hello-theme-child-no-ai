@@ -34,3 +34,8 @@ function hello_elementor_child_scripts_styles() {
 
 }
 add_action( 'wp_enqueue_scripts', 'hello_elementor_child_scripts_styles', 20 );
+
+function disable_elementor_ai() {
+    return null;
+}
+add_filter('get_user_option_' . Elementor\Modules\Ai\Preferences::ENABLE_AI, 'disable_elementor_ai');
